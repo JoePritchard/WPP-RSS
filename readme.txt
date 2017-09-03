@@ -1,6 +1,6 @@
 This is a VERY simple Wordpress Plugin designed to do one thing; get the most recent 'n' entries from a specified feed and display them in a list structure on a Wordpress Page. I wrote it because I deeded something very straight forward that worked 'out of the box'. It doesn't store feed details in a database anywhere, just whacks them on the screen when needed.
 
-Shortcode is [rssonpage rss="URL" feeds="Number of Items"]
+Shortcode is [jp-rssonpage rss="URL" feeds="Number of Items"]
 
 The list is created as a list.
 
