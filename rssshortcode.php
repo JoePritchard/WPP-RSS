@@ -17,9 +17,7 @@ function simple_get_rss($atts)
 
 	extract(shortcode_atts(array(  
 	   	"rss" 		=> '',  
-		"feeds" 	=> '10',  
-		"excerpt" 	=> true,
-		"target"	=> '_blank'
+		"feeds" 	=> '10'  
 	), $atts));
 
 
@@ -33,10 +31,10 @@ $maxitems = 0;
 if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
     // Figure out how many total items there are, but limit it to 5. 
-    $maxitems = $rss->get_item_quantity( 5 ); 
+    //$maxitems = $rss->get_item_quantity( 5 ); 
 
     // Build an array of all the items, starting with element 0 (first element).
-    $rss_items = $rss->get_items( 0, $maxitems );
+    $rss_items = $rss->get_items( 0, $feeds );
 
 endif;
 
@@ -45,17 +43,13 @@ endif;
 ob_start();
 
 ?>
-
-
-
-
-<ul>
-    <?php if ( $maxitems == 0 ) : ?>
-        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+<ul class="jp_simple_rss_feed_ul">
+    <?php if ( $feeds == 0 ) : ?>
+        <li class="jp_simple_rss_feed_li"><?php _e( 'No items', 'my-text-domain' ); ?></li>
     <?php else : ?>
         <?php // Loop through each feed item and display each item as a hyperlink. ?>
         <?php foreach ( $rss_items as $item ) : ?>
-            <li>
+            <li class="jp_simple_rss_feed_li">
                 <a href="<?php echo esc_url( $item->get_permalink() ); ?>"
                     title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>">
                     <?php echo esc_html( $item->get_title() ); ?>
@@ -66,20 +60,12 @@ ob_start();
 </ul>
 
 <?php
-
 $output = ob_get_contents();
 ob_end_clean();
-
 return $output;
 
 }
 
-
-
-
+//	Add the shortcode
 add_shortcode( 'rssonpage', 'simple_get_rss' );
-
-
-
-
 ?>
