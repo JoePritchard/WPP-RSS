@@ -4,15 +4,15 @@ Donate link:
 Stable tag : trunk
 Tags: rss feed
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Provides a means of displaying an RSS fede via a shortcode.
+Provides a means of displaying an RSS feed via a shortcode.
 
 == Description ==
 
-This is a VERY simple Wordpress Plugin designed to do one thing; get the most recent 'n' entries from a specified feed and display them in a list structure on a Wordpress Page. I wrote it because I deeded something very straight forward that worked 'out of the box'. It doesn't store feed details in a database anywhere, just whacks them on the screen when needed.
+This is a VERY simple Wordpress Plugin designed to do one thing; get the most recent 'n' entries from a specified feed and display them in a list structure on a Wordpress Page. I wrote it because I needed something very straight forward that worked 'out of the box'. It doesn't store feed details in a database anywhere, just whacks them on the screen when needed.
 
 Shortcode is [jp-rssonpage rss="URL" feeds="Number of Items"]
 
@@ -45,10 +45,3 @@ If you wish to use custom CSS, then add the custom CSS to the theme / child them
 
 = 1.0 =
 * Initial release
-
-
-
-
-
-
-
